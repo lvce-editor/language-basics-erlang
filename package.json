@@ -1,0 +1,25 @@
+{
+  "name": "builtin.language-basics-erlang",
+  "version": "0.0.0-dev",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "test-syntax-highlighting",
+    "dev": "node ./node_modules/@lvce-editor/server/bin/server.js ./test/cases --only-extension=."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@lvce-editor/package-extension": "^0.0.5",
+    "@lvce-editor/server": "^0.16.0",
+    "@lvce-editor/test-syntax-highlighting": "^0.1.1",
+    "prettier": "^2.8.8",
+    "typescript": "^5.1.6"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  }
+}

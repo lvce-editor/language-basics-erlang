@@ -1,0 +1,13 @@
+{
+  "id": "builtin.language-basics-erlang",
+  "name": "Language Basics Erlang",
+  "description": "Provides syntax highlighting and bracket matching in Erlang files.",
+  "languages": [
+    {
+      "id": "erlang",
+      "extensions": [".erl"],
+      "tokenize": "src/tokenizeErlang.js",
+      "configuration": "languageConfiguration.json"
+    }
+  ]
+}
