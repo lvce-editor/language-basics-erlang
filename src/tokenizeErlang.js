@@ -48,6 +48,12 @@ export const TokenMap = {
 
 const RE_ANYTHING = /^.+/s
 const RE_LINE_COMMENT = /^%.*/
+const RE_NUMERIC =
+  /^((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)\b/
+
+const RE_WHITESPACE = /^\s+/
+const RE_VARIABLE_NAME = /^[a-zA-Z_$][a-zA-Z\d\_]*/
+const RE_PUNCTUATION = /^[\(\)=\+\-><\.:;\{\}\[\]!,&\|\^\?\*%~]/
 
 export const initialLineState = {
   state: State.TopLevelContent,
@@ -80,8 +86,20 @@ export const tokenizeLine = (line, lineState) => {
     const part = line.slice(index)
     switch (state) {
       case State.TopLevelContent:
-        if ((next = part.match(RE_LINE_COMMENT))) {
+        if ((next = part.match(RE_WHITESPACE))) {
+          token = TokenType.Whitespace
+          state = State.TopLevelContent
+        } else if ((next = part.match(RE_NUMERIC))) {
+          token = TokenType.Numeric
+          state = State.TopLevelContent
+        } else if ((next = part.match(RE_VARIABLE_NAME))) {
+          token = TokenType.Variable
+          state = State.TopLevelContent
+        } else if ((next = part.match(RE_LINE_COMMENT))) {
           token = TokenType.Comment
+          state = State.TopLevelContent
+        } else if ((next = part.match(RE_PUNCTUATION))) {
+          token = TokenType.Punctuation
           state = State.TopLevelContent
         } else if ((next = part.match(RE_ANYTHING))) {
           token = TokenType.Unknown
