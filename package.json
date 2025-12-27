@@ -11,9 +11,11 @@
   "author": "Lvce Editor",
   "license": "MIT",
   "devDependencies": {
+    "@lvce-editor/eslint-config": "^4.3.0",
     "@lvce-editor/package-extension": "^0.0.5",
     "@lvce-editor/server": "^0.16.0",
     "@lvce-editor/test-syntax-highlighting": "^0.1.1",
+    "eslint": "^9.39.2",
     "prettier": "^2.8.8",
     "typescript": "^5.1.6"
   },
