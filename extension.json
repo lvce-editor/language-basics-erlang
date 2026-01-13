@@ -5,9 +5,12 @@
   "languages": [
     {
       "id": "erlang",
-      "extensions": [".erl"],
+      "extensions": [
+        ".erl"
+      ],
       "tokenize": "src/tokenizeErlang.js",
       "configuration": "languageConfiguration.json"
     }
-  ]
+  ],
+  "repository": "https://github.com/lvce-editor/language-basics-erlang"
 }
