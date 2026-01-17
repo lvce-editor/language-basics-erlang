@@ -11,7 +11,7 @@
   "author": "Lvce Editor",
   "license": "MIT",
   "devDependencies": {
-    "@lvce-editor/eslint-config": "^4.4.0",
+    "@lvce-editor/eslint-config": "^4.6.0",
     "@lvce-editor/package-extension": "^0.0.5",
     "@lvce-editor/server": "^0.16.0",
     "@lvce-editor/test-syntax-highlighting": "^0.1.1",
