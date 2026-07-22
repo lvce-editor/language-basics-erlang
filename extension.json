@@ -5,9 +5,7 @@
   "languages": [
     {
       "id": "erlang",
-      "extensions": [
-        ".erl"
-      ],
+      "extensions": [".erl"],
       "tokenize": "src/tokenizeErlang.js",
       "configuration": "languageConfiguration.json"
     }
