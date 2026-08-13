@@ -1,12 +1,12 @@
 Punctuation
-Keyword
+KeywordImport
 Punctuation
 LanguageConstant
 Punctuation
 Punctuation
 NewLine
 Punctuation
-Keyword
+KeywordImport
 Punctuation
 Punctuation
 Function
