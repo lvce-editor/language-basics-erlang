@@ -25,6 +25,7 @@ export const TokenType = {
   Function: 12,
   KeywordControl: 13,
   Macro: 14,
+  KeywordImport: 15,
 }
 
 export const TokenMap = {
@@ -42,6 +43,7 @@ export const TokenMap = {
   [TokenType.Function]: 'Function',
   [TokenType.KeywordControl]: 'KeywordControl',
   [TokenType.Macro]: 'Macro',
+  [TokenType.KeywordImport]: 'KeywordImport',
 }
 
 const RE_WHITESPACE = /^\s+/
@@ -131,7 +133,10 @@ export const tokenizeLine = (line, lineState) => {
         } else if ((next = part.match(RE_ATOM))) {
           const nextCharacter = getNextCharacter(line, index + next[0].length)
           if (isAttributeName(line, index)) {
-            token = TokenType.Keyword
+            token =
+              next[0] === 'module' || next[0] === 'export'
+                ? TokenType.KeywordImport
+                : TokenType.Keyword
           } else if (nextCharacter === '(' || nextCharacter === '/') {
             token = TokenType.Function
           } else {
